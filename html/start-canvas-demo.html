@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script>
+ 
+         window.onload = function(){
+           var canvas = document.getElementById("mijnCanvas");
+           var context = canvas.getContext("2d");
+ 
+           // doe nu hierna leuke dingen ...........
+           
+			// ondoorzichtige rode rechthoek 
+			context.fillStyle = "rgb(200,0,0)"; //geef een rode kleur
+			context.fillRect (10, 10, 120, 50); //plaats een rechthoek
+			
+			// blauwe rechthoek -> met 50% alpha (transparant)
+			context.fillStyle = "rgba(0, 0, 200, 0.5)"; 
+			context.fillRect (30, 30, 50, 60); // plaats de rechthoek
+			
+			// tekst (zet de tekst onderin het Canvas element)
+			context.fillStyle = "#006600"; // probeer ook andere kleuren en kleur notaties uit 
+			context.font = "60px Verdana"; // Arial of een ander lettertype kan ook
+			context.fillText('Eerste voorbeeld met Canvas', 0, 300, 600); // waar de tekst begint en hoe breed deze mag worden
+			
+			// trek een rood lijnstuk
+			context.moveTo(100,200); //ga naar het beginpunt van de lijn 
+			context.lineTo(450,50); //trek een lijn naar dit punt
+			context.lineWidth=15; //maak de lijn 15 px breed
+			context.strokeStyle="#ff0000";// rode lijn kleur
+			context.lineCap="round"; //afronden hoeken vd lijn
+			context.stroke(); //laat het getekende object zien
+         };
+ 
+        </script>
+    </head>
+    <body>
+        <canvas id="mijnCanvas" width="600" height="300">
+        </canvas>
+    </body>
+</html>
